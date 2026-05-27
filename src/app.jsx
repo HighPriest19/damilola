@@ -98,15 +98,14 @@ export default function DamilolaDateAskSite() {
     });
   };
 
-  return (
-    const clickSound = new Audio("/sounds/click.mp3");
-
   const playClick = () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  };
+  const clickSound = new Audio("/click.mp3");
+  clickSound.play();
+};
 
-  return (
+return (
+
+    
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-rose-100 via-pink-100 to-amber-100 px-4 py-8 text-slate-900">
       <FallingRoses />
 
@@ -142,16 +141,21 @@ export default function DamilolaDateAskSite() {
 
               <div className="relative mt-8 flex min-h-28 items-center justify-center gap-4">
                 <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  whileHover={{ scale: 1.06 }}
-                  onClick={() => {
-                    playClick();
-                    setStep(1);
-                  }}
-                  className="rounded-full bg-pink-600 px-8 py-4 text-lg font-black text-white shadow-xl shadow-pink-300 transition hover:bg-pink-700"
-                >
-                  Yes 💕
-                </motion.button>
+  whileTap={{ scale: 0.95 }}
+  whileHover={{ scale: 1.06 }}
+  onClick={() => {
+    playClick();
+
+    const music = new Audio("/love-song.mp3");
+    music.loop = true;
+    music.play();
+
+    setStep(1);
+  }}
+  className="rounded-full bg-pink-600 px-8 py-4 text-lg font-black text-white shadow-xl shadow-pink-300 transition hover:bg-pink-700"
+>
+  Yes 💕
+</motion.button>
 
                 <motion.button
                   animate={{ x: noPosition.x, y: noPosition.y }}
