@@ -65,7 +65,7 @@ function DancingMeme() {
       }}
       transition={{ duration: 2.1, repeat: Infinity }}
     >
-      <img src="/gifs/spongebob.gif" alt="SpongeBob" className="h-20 w-20 object-cover rounded-2xl" />
+      <img src="/public/spongebob.gif" alt="SpongeBob" className="h-20 w-20 object-cover rounded-2xl" />
     </motion.div>
   );
 }
