@@ -1,12 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For Damilola 💕</title>
-  </head>
-  <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ffd700;
+            --secondary: #ff6b9d;
+            --accent: #ff9d4d;
+            --dark-bg: #0a0a0a;
+            --dark-surface: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+        }
+
+        html, body, #root {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f0f0f 100%);
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .app {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 100%);
+            position: relative;
+        }
+
+        .rose-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .rose {
+            position: fixed;
+            font-size: 2.5rem;
+            opacity: 0.7;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 20;
+        }
+
+        .screen-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(3.5rem, 12vw, 5rem);
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 8px 16px rgba(255, 215, 0, 0.2);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 8vw, 2.5rem);
+            color: var(--text-primary);
+            text-align: center;
+            line-height: 1.4;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            text-align: center;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gif-wrapper {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.15), 0 0 30px rgba(255, 215, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .gif-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: #000;
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
+            flex: 1;
+            max-width: 140px;
+        }
+
+        .btn-yes:hover {
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .btn-no {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            flex: 1;
+            max-width: 140px;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-no:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            background: rgba(255, 107, 157, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--text-primary);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 320px;
+            justify-content: center;
+        }
+
+        .form-content {
+            max-width: 500px;
+            padding: 0 20px;
+        }
+
+        .form-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 215, 0, 0.05);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
+        }
+
+        .vibe-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .vibe-btn {
+            padding: 1.2rem;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(10px);
+            letter-spacing: 0.5px;
+        }
+
+        .vibe-btn:hover {
+            border-color: var(--primary);
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+        }
+
+        .vibe-btn.selected {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-color: var(--primary);
+            color: #000;
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .ticket {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 107, 157, 0.08) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .ticket-header {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            letter-spacing: 1.5px;
+            font-family: 'Caveat', cursive;
+        }
+
+        .ticket-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .ticket-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .ticket-value {
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .ticket-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+        }
+
+        .ps-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 1rem;
+            max-width: 500px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 1.8rem; }
+            .btn { padding: 0.9rem 2rem; font-size: 1rem; }
+            .button-group { gap: 1rem; flex-direction: column; }
+            .btn-yes, .btn-no { width: 100%; max-width: 100%; }
+            .gif-wrapper { max-width: 280px; }
+            .vibe-grid { grid-template-columns: 1fr; }
+            .ticket { padding: 1.8rem; }
+        }
+
+        @media (max-width: 400px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 0.95rem; }
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            .ps-text { font-size: 0.85rem; }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { motion, AnimatePresence } = window.FramerMotion;
+
+        function App() {
+            const [screen, setScreen] = useState(1);
+            const [noButtonPos, setNoButtonPos] = useState({ x: 0, y: 0 });
+            const [selectedDate, setSelectedDate] = useState('');
+            const [selectedTime, setSelectedTime] = useState('19:00');
+            const [selectedVibe, setSelectedVibe] = useState(null);
+            const [musicPlaying, setMusicPlaying] = useState(false);
+            const [roses, setRoses] = useState([]);
+
+            const clickSound = new Audio('./public/click.mp3');
+            const loveSong = new Audio('./public/love-song.mp3');
+            loveSong.loop = true;
+
+            useEffect(() => {
+                const roseInterval = setInterval(() => {
+                    const newRose = {
+                        id: Math.random(),
+                        left: Math.random() * 100,
+                        duration: 8 + Math.random() * 3,
+                    };
+                    setRoses((prev) => [...prev, newRose]);
+
+                    setTimeout(() => {
+                        setRoses((prev) => prev.filter((r) => r.id !== newRose.id));
+                    }, newRose.duration * 1000);
+                }, 2500);
+
+                return () => clearInterval(roseInterval);
+            }, []);
+
+            const playClick = () => {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => {});
+            };
+
+            const startMusic = () => {
+                if (!musicPlaying) {
+                    loveSong.play().catch(() => {});
+                    setMusicPlaying(true);
+                }
+            };
+
+            const handleYes = () => {
+                playClick();
+                startMusic();
+                setTimeout(() => setScreen(2), 300);
+            };
+
+            const handleNoHover = () => {
+                const randomX = (Math.random() - 0.5) * 300;
+                const randomY = (Math.random() - 0.5) * 200;
+                setNoButtonPos({ x: randomX, y: randomY });
+            };
+
+            const handleNext = () => {
+                playClick();
+                setTimeout(() => setScreen(3), 300);
+            };
+
+            const isFormComplete = selectedDate && selectedTime && selectedVibe;
+
+            const handleConfirm = () => {
+                if (!isFormComplete) return;
+                playClick();
+
+                const date = new Date(selectedDate);
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const formattedDate = date.toLocaleDateString('en-US', options);
+
+                const [hours, minutes] = selectedTime.split(':');
+                const hour = parseInt(hours);
+                const period = hour >= 12 ? 'PM' : 'AM';
+                const displayHour = hour % 12 || 12;
+                const formattedTime = `${displayHour}:${minutes} ${period}`;
+
+                localStorage.setItem('dateInfo', JSON.stringify({
+                    date: formattedDate,
+                    time: formattedTime,
+                    vibe: selectedVibe,
+                }));
+
+                setTimeout(() => setScreen(4), 300);
+            };
+
+            const dateInfo = localStorage.getItem('dateInfo') ? JSON.parse(localStorage.getItem('dateInfo')) : null;
+            const today = new Date().toISOString().split('T')[0];
+
+            return (
+                <div className="app">
+                    <div className="rose-container">
+                        <AnimatePresence>
+                            {roses.map((rose) => (
+                                <motion.div
+                                    key={rose.id}
+                                    className="rose"
+                                    style={{ left: `${rose.left}%` }}
+                                    initial={{ y: -50, opacity: 0.7, rotate: 0 }}
+                                    animate={{ y: window.innerHeight + 50, opacity: 0, rotate: 360 }}
+                                    transition={{ duration: rose.duration, ease: 'linear' }}
+                                >
+                                    🌹
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </div>
+
+                    <AnimatePresence mode="wait">
+                        {screen === 1 && (
+                            <motion.div
+                                key="screen1"
+                                className="screen"
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -50 }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                <div className="screen-content">
+                                    <motion.div className="gif-wrapper" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.2 }}>
+                                        <img src="./public/cat.gif" alt="Cute cat" />
+                                    </motion.div>
+
+                                    <div className="text-section">
+                                        <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                                            Damilola...
+                                        </motion.h1>
+                                        <motion.p initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                                            Will you be my girlfriend?
+                                        </motion.p>
+                                    </div>
+
+                                    <div className="button-group">
+                                        <motion.button
+                                            className="btn btn-yes"
+                                            onClick={handleYes}
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: 0.6 }}
+                                        >
+                                            Yes 💕
+                                        </motion.button>
+
+                                        <motion.div
+                                            animate={{ x: noButtonPos.x, y: noButtonPos.y }}
+                                            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{ delay: 0.6 }}
+                                        >
+                                            <button
+                                                className="btn btn-no"
+                                                onMouseEnter={handleNoHover}
+                                                onTouchStart={handleNoHover}
+                                                onMouseLeave={() => setNoButtonPos({ x: 0, y: 0 })}
+                                            >
+                                                No 😭
+                                            </button>
+                                        </motion.div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )}
+
+                        {screen === 2 && (
+                            <motion.div
+                                key="screen2"
+                                className="screen"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                <div className="screen-content">
+                                    <motion.div className="gif-wrapper" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 100 }}>
+                                        <img src="./public/spongebob.gif" alt="SpongeBob celebrating" />
+                                    </motion.div>
+
+                                    <div className="text-section">
+                                        <motion.h2 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                                            Wait... you actually said yes?? 😭
+                         q
