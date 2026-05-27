@@ -65,7 +65,7 @@ function DancingMeme() {
       }}
       transition={{ duration: 2.1, repeat: Infinity }}
     >
-      <img src="/gifs/spongebob.gif" alt="SpongeBob" className="h-20 w-20 object-cover rounded-2xl" />
+      <img src="/spongebob.gif" alt="SpongeBob" className="h-20 w-20 object-cover rounded-2xl" />
     </motion.div>
   );
 }
@@ -114,7 +114,7 @@ export default function DamilolaDateAskSite() {
       <div className="absolute bottom-12 right-8 h-36 w-36 rounded-full bg-amber-300/40 blur-3xl" />
 
       <audio autoPlay loop>
-        <source src="/sounds/love-song.mp3" type="audio/mp3" />
+        <source src="/love-song.mp3" type="audio/mp3" />
       </audio>
 
       <section className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-5xl flex-col items-center justify-center text-center">
@@ -129,7 +129,7 @@ export default function DamilolaDateAskSite() {
         <AnimatePresence mode="wait">
           {step === 0 && (
             <StepCard key="ask">
-              <img src="/gifs/cat.gif" alt="cat" className="mx-auto h-28 w-28 rounded-[2rem] object-cover shadow-xl" />
+              <img src="/cat.gif" alt="cat" className="mx-auto h-28 w-28 rounded-[2rem] object-cover shadow-xl" />
               <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
                 Damilola...
               </h1>
@@ -285,7 +285,7 @@ export default function DamilolaDateAskSite() {
                 Be ready by {time || "6:00"}, I’m coming to get you <Car className="inline" />
               </p>
 
-              <img src="/gifs/shrek.gif" alt="Shrek" className="mx-auto mt-5 h-40 rounded-[2rem] object-cover shadow-2xl" />
+              <img src="/shrek.gif" alt="Shrek" className="mx-auto mt-5 h-40 rounded-[2rem] object-cover shadow-2xl" />
 
               <div className="mt-6 rounded-3xl bg-white/70 p-5 text-left shadow-inner">
                 <p className="font-bold text-slate-800">Date: {date || "our chosen day"}</p>
