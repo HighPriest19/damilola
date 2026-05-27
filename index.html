@@ -1,40 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Damilola 💕</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="roses"></div>
+  <div id="sparkles"></div>
 
-  <main class="card">
-    <img id="mainGif" src="cat.gif" class="gif">
-    <h1 id="title">Damilola...</h1>
-    <p id="text">Will you go on a date with me?</p>
+  <main class="phone">
+    <div class="top-pill">🐱 Damilola Only Access</div>
 
-    <div id="buttons">
-      <button id="yesBtn">Yes 💕</button>
-      <button id="noBtn">No 😭</button>
-    </div>
+    <section class="card" id="card">
+      <div class="step-badge" id="stepBadge">Step 1 / 5</div>
 
-    <div id="formArea" class="hidden">
-      <label>Select date</label>
-      <input type="date" id="date">
+      <img id="mainGif" src="public/cat.gif" class="gif" alt="meme gif" />
 
-      <label>What time?</label>
-      <input type="time" id="time">
+      <h1 id="title">Damilola...</h1>
+      <p id="text">Will you go on a date with me?</p>
+      <p id="smallText">Warning: the “No” button is not emotionally available 😭</p>
 
-      <label>What are we feeling? 🍹</label>
-      <select id="feeling">
-        <option>Mocktails 🍹</option>
-        <option>Ice cream date 🍦</option>
-        <option>Pizza + gist 🍕</option>
-        <option>Shawarma run 🌯</option>
-        <option>Cinema vibes 🍿</option>
-      </select>
+      <div id="buttons" class="buttons">
+        <button id="yesBtn" class="yes">Yes 💕</button>
+        <button id="noBtn" class="no">No 😭</button>
+      </div>
 
-      <button id="setBtn">This one 😌</button>
-    </div>
+      <div id="formArea" class="hidden form-area">
+        <label>Select date 💌</label>
+        <input type="date" id="date" />
+
+        <label>What time? ⏰</label>
+        <input type="time" id="time" />
+
+        <label>What are we feeling? 🍹</label>
+        <select id="feeling">
+          <option>Mocktails 🍹</option>
+          <option>Ice cream date 🍦</option>
+          <option>Pizza + gist 🍕</option>
+          <option>Shawarma run 🌯</option>
+          <option>Cinema vibes 🍿</option>
+          <option>Anything you want, princess 💕</option>
+        </select>
+
+        <button id="setBtn" class="yes">This one 😌</button>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
