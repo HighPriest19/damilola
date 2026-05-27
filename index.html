@@ -1,10 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Damilola 💕</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <title>Damilola 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="roses"></div>
+
+  <main class="card">
+    <img id="mainGif" src="cat.gif" class="gif">
+    <h1 id="title">Damilola...</h1>
+    <p id="text">Will you go on a date with me?</p>
+
+    <div id="buttons">
+      <button id="yesBtn">Yes 💕</button>
+      <button id="noBtn">No 😭</button>
+    </div>
+
+    <div id="formArea" class="hidden">
+      <label>Select date</label>
+      <input type="date" id="date">
+
+      <label>What time?</label>
+      <input type="time" id="time">
+
+      <label>What are we feeling? 🍹</label>
+      <select id="feeling">
+        <option>Mocktails 🍹</option>
+        <option>Ice cream date 🍦</option>
+        <option>Pizza + gist 🍕</option>
+        <option>Shawarma run 🌯</option>
+        <option>Cinema vibes 🍿</option>
+      </select>
+
+      <button id="setBtn">This one 😌</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
